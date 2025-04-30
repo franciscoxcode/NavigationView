@@ -14,12 +14,18 @@ struct ContentView: View {
             .navigationTitle("Feedback")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cerrar"){
                         print("borrar presionado")
                     }
             }
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Image(systemName: "paperplane.fill")
+                    Image(systemName: "trash.fill")
+                }
             }
+            .toolbarBackground(Color.orange, for: .navigationBar)
+            .toolbarBackgroundVisibility(.visible, for: .navigationBar)
         }
     }
 }
