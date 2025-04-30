@@ -10,7 +10,21 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            Text("")
+            VStack {
+                TextField("Escriba su comentario", text: .constant(""))
+                    .toolbar {
+                        ToolbarItemGroup(placement: .keyboard) {
+                            Button("Enviar"){
+                                print("Enviar presionado")
+                            }
+                            Button("Cancelar"){
+                                print("Cancelar presionado")
+                            }
+                        }
+                    }
+                    .padding()
+                Spacer()
+            }
             .navigationTitle("Feedback")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
